@@ -9,16 +9,20 @@ function Footer() {
           <h4 className="brand col-sm-2">BOOKMARK</h4>
           <div className="links-holder col-sm-8">
             <ul className="links">
+              <li className="link-item">
+                <a href="#home">Home</a>
+              </li>
               <li className="link-item ">
-                <a href="#" className="active">
-                  Features
-                </a>
+                <a href="#Features">Features</a>
               </li>
               <li className="link-item">
-                <a href="#">Pricing</a>
+                <a href="#Download">Download</a>
               </li>
               <li className="link-item">
-                <a href="#">Contact</a>
+                <a href="#FAQS">FAQS</a>
+              </li>
+              <li className="link-item">
+                <a href="#Contact">Contact</a>
               </li>
             </ul>
           </div>
