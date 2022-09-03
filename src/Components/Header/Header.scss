@@ -1,0 +1,136 @@
+@use "../SASS/GlobalRules" as *;
+@use "../SASS/Variables" as *;
+@use "../SASS/Mixins" as *;
+
+header {
+  justify-content: space-evenly;
+  .links-holder {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    .burger {
+      width: 25px;
+      display: none;
+    }
+    .links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-right: 30px;
+      height: 100%;
+      .link-item {
+        font-size: 14px;
+        margin-left: 25px;
+        text-transform: uppercase;
+        a {
+          color: $Very-Dark-Blue;
+          transition: $transition;
+          &.active,
+          &:hover {
+            color: $Soft-Red;
+          }
+        }
+      }
+      display: none;
+    }
+  }
+  .main {
+    @include mainButton($Soft-Red, 15px);
+    border: 2px solid $Soft-Red;
+    color: #fff;
+    font-weight: 500;
+    &:hover {
+      background-color: #fff;
+      color: $Soft-Red;
+    }
+    display: none;
+  }
+
+  .mobile-links-holder {
+    position: fixed;
+    background-color: rgba($Very-Dark-Blue, 0.8);
+    height: 100vh;
+    top: 0;
+    left: 0;
+    padding: 0;
+    display: none;
+
+    .links-head {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 50px 0;
+      .logo {
+        color: #fff;
+        letter-spacing: 3px;
+        margin: 0;
+      }
+      .close {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        font-size: 35px;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+    .mobile-links {
+      text-align: center;
+      border-bottom: 0.5px solid #efefef;
+      .mobile-link-item {
+        padding: 30px 0;
+        font-size: 25px;
+        border-top: 0.5px solid #efefef;
+        a {
+          color: #fff;
+        }
+      }
+    }
+    .mobile-main {
+      width: 100%;
+      background-color: transparent;
+      color: #fff;
+      border: 3px solid #fff;
+      margin-top: 30px;
+      padding: 15px 0;
+      border-radius: 5px;
+      font-size: 20px;
+    }
+    .social-icons {
+      margin-top: 100px;
+      text-align: center;
+      img {
+        width: 40px;
+        &:first-child {
+          margin-right: 40px;
+        }
+      }
+    }
+    &.active {
+      display: block;
+    }
+  }
+}
+
+@include media(mobile) {
+  header {
+    .links-holder {
+      .burger {
+        display: block;
+      }
+    }
+  }
+}
+
+@include media(SmallToInf) {
+  header {
+    .links-holder {
+      .links {
+        display: flex;
+      }
+    }
+    .main {
+      display: inline-block;
+    }
+  }
+}

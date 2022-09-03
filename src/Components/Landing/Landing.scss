@@ -1,0 +1,101 @@
+@use "../SASS/GlobalRules" as *;
+@use "../SASS/Variables" as *;
+@use "../SASS/Mixins" as *;
+
+.landing {
+  position: relative;
+  padding: 25px 0 50px;
+  .holder {
+    height: calc(100vh - 37px);
+    align-items: center;
+  }
+  .mainBox {
+    .mainWord {
+      font-size: 45px;
+      color: $Very-Dark-Blue;
+    }
+    .disc {
+      color: $Grayish-Blue;
+      line-height: 1.7;
+      margin: 15px 0;
+      width: 70%;
+    }
+    .buttons {
+      .main {
+        @include mainButton(#fff, 15px);
+        margin-right: 20px;
+        transition: $transition;
+        &.first {
+          background-color: $Soft-Blue;
+          border: 2px solid $Soft-Blue;
+          color: #fff;
+          &:hover {
+            background-color: #fff;
+            color: $Soft-Blue;
+          }
+        }
+        &.sec {
+          background-color: #e8eaf6;
+          border: 2px solid #e8eaf6;
+          color: $Very-Dark-Blue;
+          &:hover {
+            background-color: #fff;
+            border-color: $Very-Dark-Blue;
+            color: $Grayish-Blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media(mobile) {
+  .landing {
+    .holder {
+      margin-top: 100px;
+      flex-direction: column;
+      gap: 80px;
+    }
+    .mainBox {
+      text-align: center;
+      order: 2;
+      .mainWord {
+        font-size: 30px;
+      }
+      .disc {
+        width: 90%;
+        margin: 15px auto;
+      }
+      .buttons {
+        margin: 20px 0;
+        display: flex;
+        justify-content: space-evenly;
+        .main {
+          margin: 0;
+        }
+      }
+    }
+    .imgBox {
+      order: 1;
+    }
+  }
+}
+@include media(small) {
+  .holder {
+    text-align: center;
+    margin-top: 80px;
+    .mainBox {
+      margin-bottom: 50px;
+      .disc {
+        width: 100%;
+      }
+      .buttons {
+        display: flex;
+        justify-content: space-evenly;
+        .main {
+          margin: 0;
+        }
+      }
+    }
+  }
+} ;

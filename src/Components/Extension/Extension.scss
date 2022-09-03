@@ -1,0 +1,61 @@
+@use "../SASS/GlobalRules" as *;
+@use "../SASS/Variables" as *;
+@use "../SASS/Mixins" as *;
+
+.Extension {
+  padding-bottom: 200px;
+
+  .cards-holder {
+    margin-top: 40px;
+    .grid {
+      width: 70%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 45px;
+      .browserEx {
+        background: url(../../../public/images/bg-dots.svg) no-repeat;
+        background-position: 0 80%;
+        background-size: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #fff;
+        padding: 30px 15px 15px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        text-align: center;
+        transition: $transition + 0.3;
+        &:hover {
+          transform: translateY(0);
+        }
+      }
+      .pic {
+        width: 150px;
+        margin: 0 auto 20px;
+      }
+      .name {
+        color: $Very-Dark-Blue;
+        margin: 0;
+      }
+      .version {
+        color: $Grayish-Blue;
+        font-size: 14px;
+      }
+      .main {
+        @include mainButton($Soft-Blue, 15px);
+        color: #fff;
+        margin-top: 40px;
+      }
+    }
+  }
+}
+
+// translating the cards
+$translate: 40;
+
+@for $i from 2 to 4 {
+  .browserEx:nth-child(#{$i}) {
+    transform: translateY(#{$translate}px);
+  }
+  $translate: $translate + $translate;
+}

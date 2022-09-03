@@ -1,0 +1,58 @@
+@use "../SASS/GlobalRules" as *;
+@use "../SASS/Variables" as *;
+@use "../SASS/Mixins" as *;
+
+footer {
+  padding: 25px 0;
+  background-color: $Very-Dark-Blue;
+  .row {
+    justify-content: space-between;
+  }
+  .brand {
+    color: #fff;
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: 2px;
+  }
+  .links {
+    display: flex;
+    justify-content: flex-start;
+    .link-item {
+      margin-right: 20px;
+      a {
+        color: #fff;
+        font-size: 15px;
+        font-weight: normal;
+        transition: $transition;
+        &:hover {
+          color: $Soft-Red;
+        }
+      }
+    }
+  }
+  .social {
+    img {
+      margin-right: 15px;
+    }
+  }
+}
+
+@include media(mobile) {
+  footer {
+    text-align: center;
+    .links {
+      margin: 15px 0;
+      flex-direction: column;
+      .link-item {
+        padding: 8px 0;
+      }
+    }
+  }
+}
+@include media(small) {
+  footer {
+    .links {
+      justify-content: center;
+    }
+  }
+}

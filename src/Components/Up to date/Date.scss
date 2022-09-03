@@ -1,0 +1,118 @@
+@use "../SASS/GlobalRules" as *;
+@use "../SASS/Variables" as *;
+@use "../SASS/Mixins" as *;
+
+.Date {
+  padding: 45px 0;
+  background-color: $Soft-Blue;
+  .mainContent {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    .top {
+      padding: 0 80px;
+      .joined,
+      .heading {
+        color: #fff;
+        margin: 0;
+      }
+      .joined {
+        letter-spacing: 4px;
+        font-weight: normal;
+        font-size: 14px;
+        text-transform: uppercase;
+      }
+      .heading {
+        font-size: 40px;
+        margin: 25px 0;
+      }
+    }
+    form {
+      display: flex;
+      justify-content: center;
+      .holder {
+        position: relative;
+        flex-basis: 50%;
+        margin-right: 15px;
+        text-align: left;
+        input,
+        .main {
+          border: none;
+          outline: none;
+        }
+        input {
+          width: 100%;
+          height: 100%;
+          padding: 8px 16px;
+          border-radius: 4px;
+          &::placeholder {
+            font-size: 13px;
+            text-transform: capitalize;
+          }
+        }
+        .error-icon {
+          position: absolute;
+          top: 50%;
+          right: 15px;
+          transform: translateY(-50%);
+          opacity: 0;
+          transition: $transition;
+        }
+        &.error {
+          position: relative;
+        }
+        &.error::after {
+          position: absolute;
+          content: "Whoops, make sure you've entered the right email !!";
+          font-size: 13px;
+          font-style: italic;
+          background-color: $Soft-Red;
+          padding: 8px 15px;
+          color: #fff;
+          width: 100%;
+          top: 100%;
+          left: 0;
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+        &.error :first-child {
+          border: 3px solid $Soft-Red;
+        }
+        &.error .error-icon {
+          opacity: 1;
+        }
+      }
+      .main {
+        @include mainButton($Soft-Red, 16px);
+        color: #fff;
+        border: 2px solid $Soft-Red;
+        &:hover {
+          background-color: #fff;
+          color: $Soft-Red;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .Date {
+    .mainContent {
+      width: 80%;
+      .top {
+        padding: 0;
+      }
+    }
+  }
+}
+
+@include media(small) {
+  form {
+    .holder {
+      margin: 0;
+      input {
+        height: 100%;
+      }
+    }
+  }
+}
