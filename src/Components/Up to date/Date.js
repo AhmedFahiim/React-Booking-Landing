@@ -14,7 +14,7 @@ function Date() {
   };
 
   return (
-    <section className="Date">
+    <section id="Contact" className="Date">
       <article className="mainContent">
         <div className="top">
           <p className="joined">35,000+ already joined</p>

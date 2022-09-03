@@ -12,7 +12,7 @@ function Qestions() {
   };
 
   return (
-    <section className="Qestions">
+    <section id="FAQS" className="Qestions">
       <article className="sectionHeader">
         <h1>Frequently Asked Questions</h1>
         <p>

@@ -3,8 +3,12 @@ import "./Header.scss";
 
 function Header() {
   const [active, setActive] = useState(false);
+  const [activeLink, setActiveLink] = useState(0);
 
   const linksToggler = () => setActive(!active);
+
+  const activeLinkHandler = (e) =>
+    setActiveLink(e.currentTarget.getAttribute("id"));
 
   return (
     <header className="row">
@@ -13,16 +17,50 @@ function Header() {
       </div>
       <div className="links-holder col-5 col-md-7 col-lg-8">
         <ul className="links">
-          <li className="link-item ">
-            <a href="#" className="active">
+          <li
+            className="link-item"
+            id="0"
+            onClick={(e) => activeLinkHandler(e)}
+          >
+            <a href="#home" className={`${activeLink == 0 && "active"}`}>
+              Home
+            </a>
+          </li>
+          <li
+            id="1"
+            onClick={(e) => activeLinkHandler(e)}
+            className="link-item "
+          >
+            <a href="#Features" className={`${activeLink == 1 && "active"}`}>
               Features
             </a>
           </li>
-          <li className="link-item">
-            <a href="#">Pricing</a>
+          <li
+            id="2"
+            onClick={(e) => activeLinkHandler(e)}
+            className="link-item"
+          >
+            <a href="#Download" className={`${activeLink == 2 && "active"}`}>
+              Download
+            </a>
           </li>
-          <li className="link-item">
-            <a href="#">Contact</a>
+          <li
+            id="4"
+            onClick={(e) => activeLinkHandler(e)}
+            className="link-item"
+          >
+            <a href="#FAQS" className={`${activeLink == 4 && "active"}`}>
+              FAQS
+            </a>
+          </li>
+          <li
+            id="3"
+            onClick={(e) => activeLinkHandler(e)}
+            className="link-item"
+          >
+            <a href="#Contact" className={`${activeLink == 3 && "active"}`}>
+              Contact
+            </a>
           </li>
         </ul>
         <img

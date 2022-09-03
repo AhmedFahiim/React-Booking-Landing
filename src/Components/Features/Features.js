@@ -32,7 +32,7 @@ function Features() {
   };
 
   return (
-    <section className="features">
+    <section id="Features" className="features">
       <article className="sectionHeader">
         <h1>Features</h1>
         <p>

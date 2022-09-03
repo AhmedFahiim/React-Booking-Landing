@@ -20,7 +20,7 @@ function Extesion() {
   });
 
   return (
-    <section className="Extension">
+    <section id="Download" className="Extension">
       <article className="sectionHeader">
         <h1>Download the extension</h1>
         <p>
